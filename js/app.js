@@ -42,7 +42,8 @@ function vibrar(padrao) {
 
   // 2. vibrate() devolve true (aceitou) ou false (recusou)
   const aceitou = navigator.vibrate(padrao);
-
+  //meu teste 2
+  alert(aceitou);
   if (!aceitou) {
     alert("entrei no if !aceitou da função vibrar()");
     mostrarAviso("O navegador bloqueou a vibração");
