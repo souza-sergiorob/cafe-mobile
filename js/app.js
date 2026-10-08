@@ -30,6 +30,9 @@ function mostrarAviso(texto) {
 }*/
 
 function vibrar(padrao) {
+  //meu teste
+  alert("entrei na função vibrar()");
+
   // 1. O navegador conhece a API de vibração?
   if (!("vibrate" in navigator)) {
     mostrarAviso("Este navegador não suporta vibração");
