@@ -22,12 +22,37 @@ function mostrarAviso(texto) {
 
 // RECURSO DE HARDWARE: motor de vibração do celular
 // padrao pode ser um número (ms) ou uma lista: [vibra, pausa, vibra...]
-function vibrar(padrao) {
+/*function vibrar(padrao) {
   // Nem todo aparelho tem vibração (iPhone e computador não têm esta API)
   if ("vibrate" in navigator) {
     navigator.vibrate(padrao);
   }
+}*/
+
+function vibrar(padrao) {
+  // 1. O navegador conhece a API de vibração?
+  if (!("vibrate" in navigator)) {
+    mostrarAviso("Este navegador não suporta vibração");
+    return;
+  }
+
+  // 2. vibrate() devolve true (aceitou) ou false (recusou)
+  const aceitou = navigator.vibrate(padrao);
+
+  if (!aceitou) {
+    mostrarAviso("O navegador bloqueou a vibração");
+  }
 }
+
+
+
+
+
+
+
+
+
+
 
 // ---------- Navegação por abas ----------
 
