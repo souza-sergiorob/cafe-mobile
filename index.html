@@ -5,12 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#6f4e37">
   <title>Café Mobile</title>
+  <!-- PWA: o manifest descreve o app (nome, ícone, cores) para o celular -->
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="icons/icon-192.png">
+  <!-- iPhone não usa os ícones do manifest: precisa desta linha -->
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
   <header class="topo">
     <h1>☕ Café Mobile</h1>
+    <!-- Só aparece quando o navegador permite instalar (ver pwa.js) -->
+    <button id="btn-instalar" class="btn-instalar" hidden>Instalar</button>
   </header>
 
   <main>
@@ -35,6 +42,7 @@
         <strong id="total-pedido">R$ 0,00</strong>
       </div>
       <button id="btn-finalizar" class="btn-principal">Finalizar pedido</button>
+      <button id="btn-compartilhar-pedido" class="btn-secundario">📤 Compartilhar pedido</button>
     </section>
     <!-- ===== Tela 3: Meu Café (câmera) ===== -->
     <section id="tela-camera" class="tela" hidden>
@@ -83,5 +91,6 @@
   <script src="js/dados.js"></script>
   <script src="js/app.js"></script>
   <script src="js/camera.js"></script>
+  <script src="js/pwa.js"></script>
 </body>
 </html>

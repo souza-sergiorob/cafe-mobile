@@ -1,5 +1,5 @@
 // ==========================================================
-// camera.js - Dia 4: câmera do celular e galeria de fotos
+// camera.js - Dia 5: câmera do celular e galeria de fotos
 // RECURSO DE HARDWARE: câmera (frontal e traseira)
 // Exige HTTPS (ou arquivo local/localhost) e permissão do usuário.
 // ==========================================================
@@ -172,7 +172,13 @@ function mostrarGaleria() {
     div.innerHTML = `
       <img src="${foto.imagem}" alt="Foto do meu café">
       <small>${foto.data}</small>
+      <div class="foto-acoes">
+        <button class="btn-compartilhar-foto" aria-label="Compartilhar foto">📤</button>
+      </div>
     `;
+    div.querySelector(".btn-compartilhar-foto").addEventListener("click", function () {
+      compartilharFoto(foto); // função que está em pwa.js
+    });
     galeria.appendChild(div);
   }
 }

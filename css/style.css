@@ -439,3 +439,27 @@ video.espelhado {
 .galeria .vazio {
   grid-column: 1 / -1;
 }
+
+/* ---------- Recursos de PWA ---------- */
+.btn-instalar {
+  padding: 6px 14px;
+  border: 2px solid #fff;
+  border-radius: 999px;
+  background: transparent;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.foto-acoes {
+  display: flex;
+}
+
+.foto-acoes button {
+  flex: 1;
+  padding: 6px 0;
+  border: none;
+  background: none;
+  font-size: 1rem;
+  cursor: pointer;
+}

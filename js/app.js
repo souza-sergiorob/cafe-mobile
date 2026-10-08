@@ -1,5 +1,5 @@
 // ==========================================================
-// app.js - Dia 4: abas, pedido, localStorage e vibração
+// app.js - Dia 5: abas, pedido, localStorage e vibração
 // (a câmera fica em camera.js)
 // ==========================================================
 
@@ -201,6 +201,7 @@ function mostrarPedido() {
   contador.hidden = quantidadeTotal === 0;
 
   document.querySelector("#btn-finalizar").disabled = pedido.length === 0;
+  document.querySelector("#btn-compartilhar-pedido").disabled = pedido.length === 0;
 }
 
 function finalizarPedido() {
