@@ -36,6 +36,7 @@ function vibrar(padrao) {
   // 1. O navegador conhece a API de vibração?
   if (!("vibrate" in navigator)) {
     mostrarAviso("Este navegador não suporta vibração");
+     alert("entrei no if vibrate in navigator na função vibrar()");
     return;
   }
 
@@ -43,6 +44,7 @@ function vibrar(padrao) {
   const aceitou = navigator.vibrate(padrao);
 
   if (!aceitou) {
+    alert("entrei no if !aceitou da função vibrar()");
     mostrarAviso("O navegador bloqueou a vibração");
   }
 }
