@@ -1,5 +1,6 @@
 // ==========================================================
-// app.js - Dia 3: abas, pedido, localStorage e vibração
+// app.js - Dia 4: abas, pedido, localStorage e vibração
+// (a câmera fica em camera.js)
 // ==========================================================
 
 // ---------- Utilidades ----------
@@ -22,43 +23,12 @@ function mostrarAviso(texto) {
 
 // RECURSO DE HARDWARE: motor de vibração do celular
 // padrao pode ser um número (ms) ou uma lista: [vibra, pausa, vibra...]
-/*function vibrar(padrao) {
+function vibrar(padrao) {
   // Nem todo aparelho tem vibração (iPhone e computador não têm esta API)
   if ("vibrate" in navigator) {
     navigator.vibrate(padrao);
   }
-}*/
-
-function vibrar(padrao) {
-  //meu teste
-  alert("entrei na função vibrar()");
-
-  // 1. O navegador conhece a API de vibração?
-  if (!("vibrate" in navigator)) {
-    mostrarAviso("Este navegador não suporta vibração");
-     alert("entrei no if vibrate in navigator na função vibrar()");
-    return;
-  }
-
-  // 2. vibrate() devolve true (aceitou) ou false (recusou)
-  const aceitou = navigator.vibrate(padrao);
-  //meu teste 2
-  alert(aceitou);
-  if (!aceitou) {
-    alert("entrei no if !aceitou da função vibrar()");
-    mostrarAviso("O navegador bloqueou a vibração");
-  }
 }
-
-
-
-
-
-
-
-
-
-
 
 // ---------- Navegação por abas ----------
 
@@ -73,6 +43,11 @@ function abrirTela(idTela) {
     aba.classList.toggle("ativa", aba.dataset.tela === idTela);
   }
   window.scrollTo(0, 0);
+
+  // Saiu da tela da câmera? Desliga a câmera para economizar bateria
+  if (idTela !== "tela-camera") {
+    desligarCamera(); // função que está em camera.js
+  }
 }
 
 for (const aba of abas) {
